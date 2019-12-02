@@ -44,7 +44,8 @@ huffman encoding을 이용한 데이터 압축 알고리즘 설계
 ![1](https://user-images.githubusercontent.com/58419421/69968484-dcdf8780-155d-11ea-9709-1880eb5487c0.jpg)
 <과제1>
 
-참고) 첨부된 hwp 파일은 term project 제출 보고서임.
+참고) 1. 첨부된 hwp 파일은 term project 제출 보고서임.
+      2. 첨부된 txt 파일은 data compression을 필요로 하는 파일임. 
 
 #### 알고리즘 설계
 ![1](https://user-images.githubusercontent.com/58419421/69973225-7c087d00-1566-11ea-9c8b-d9b8e6e2d858.jpg)
