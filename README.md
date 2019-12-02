@@ -3,7 +3,6 @@
 ## 파일소개
 # 수치해석(matlab)
 과제 1. f(x) = f(a) + f`(a)(x-a) + {f``(a)(x-a)^2}/2 + ,,, + (f^(n)(a)/n!)*(x-a)^n 을 taylor series 를 이용하여 x가 0~1에 대해 f(x)=e^x 파형과 함수값을 나타내는 function 파일 작성
-
 ![수치해석 HW1](https://user-images.githubusercontent.com/58419421/69967248-5a55c880-155b-11ea-8592-59db7021296e.jpg)
 <1번 파일에 대한 과제>
 
@@ -18,8 +17,9 @@
 7) rangestore는 배열이므로 fxapp도 배열이 되고, fxapp 배열에 각 point에서의 함수값이 저장된다.
 8) 결과 출력을 위한 for문과 plot문
 
-과제 2. power method로 대칭행렬의 가장 큰 eigen value와 가장 작은 eigen value를 구하고, 그에 따른 eigen vector를 나타내는 파일 작성
 
+
+과제 2. power method로 대칭행렬의 가장 큰 eigen value와 가장 작은 eigen value를 구하고, 그에 따른 eigen vector를 나타내는 파일 작성
 ![수치해석 HW2](https://user-images.githubusercontent.com/58419421/69967246-59bd3200-155b-11ea-8a82-05beb741cc29.jpg)
 <2번 파일에 대한 과제>
 
@@ -34,9 +34,10 @@
 5) choice == 2 인 경우, eigen value 값에 역수를 취해줌.
 6) 최대 반복 횟수는 100회이고, 허용오차보다 오차가 작아지면 그 즉시 for문을 탈출하도록 설계하였음.
 
+
+
 # 컴퓨터학개론(matlab)
 과제 1. huffman encoding을 이용한 데이터 압축 알고리즘 설계
-
 ![1](https://user-images.githubusercontent.com/58419421/69968484-dcdf8780-155d-11ea-9709-1880eb5487c0.jpg)
 <3번 파일에 대한 과제>
 
