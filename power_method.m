@@ -1,30 +1,30 @@
 function [ eig_val, eig_vec ] = power_method(A,es,maxit)  
-%%%%%%%%% ÀÔ·Â Çà·ÄÀÌ n >=3,square,symmetric matrix¸¦ ¸¸Á·ÇÏ´ÂÁö ÆÇº° %%%%%%%%%%%
+%%%%%%%%% ì…ë ¥ í–‰ë ¬ì´ n >=3,square,symmetric matrixë¥¼ ë§Œì¡±í•˜ëŠ”ì§€ íŒë³„ %%%%%%%%%%%
 [n,m] = size(A);
 if n~=m, error('not square matrix');
 elseif n < 3, error('not larger than 3*3');
 elseif issymmetric(A) == 0, error('not symmetric matrix');
 end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-X = ones(n,1); % ÃÊ±â eigen vector ¼³Á¤
-oldval = 0; % ÃÊ±â eigen value ¼³Á¤
-%%%%%%%%% largest OR smallest eigen value »ç¿ëÀÚ°¡ ¼±ÅÃ %%%%%%%%%%%%
+X = ones(n,1); % ì´ˆê¸° eigen vector ì„¤ì •
+oldval = 0; % ì´ˆê¸° eigen value ì„¤ì •
+%%%%%%%%% largest OR smallest eigen value ì‚¬ìš©ìê°€ ì„ íƒ %%%%%%%%%%%%
 choice = input('Eigen value : the 1.largest  2.smallest ?');
-%%%%%%%%% choice°¡ 2ÀÎ °æ¿ì¿¡¸¸ Çà·Ä A¸¦ ¿ªÇà·Ä·Î ¹Ù²ãÁØ´Ù.%%%%%%%%%
+%%%%%%%%% choiceê°€ 2ì¸ ê²½ìš°ì—ë§Œ í–‰ë ¬ Aë¥¼ ì—­í–‰ë ¬ë¡œ ë°”ê¿”ì¤€ë‹¤.%%%%%%%%%
 if choice == 2,  A=inv(A);
 elseif choice == 1
 else, error('choice 1 or 2!');
 end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    for iter = 1:1:maxit % ÃÖ´ë ¹İº¹È½¼ö = maxit
-        if max(A*X) ~= max(abs(A*X)), eig_val = -max(abs(A*X)); % Çà·Ä ¿ä¼ÒÀÇ Àı´ë°ªÀÇ ÃÖ´ë°ªÀÌ À½¼öÀÎ °æ¿ì¿¡ -¸¦ ºÙ¿©ÁØ´Ù.
-        else, eig_val = max(abs(A*X)); % powermethod¸¦ ÀÌ¿ë => eigen value = AX Çà·Ä ¿ä¼ÒÀÇ ÃÖ´ë°ª
+    for iter = 1:1:maxit % ìµœëŒ€ ë°˜ë³µíšŸìˆ˜ = maxit
+        if max(A*X) ~= max(abs(A*X)), eig_val = -max(abs(A*X)); % í–‰ë ¬ ìš”ì†Œì˜ ì ˆëŒ€ê°’ì˜ ìµœëŒ€ê°’ì´ ìŒìˆ˜ì¸ ê²½ìš°ì— -ë¥¼ ë¶™ì—¬ì¤€ë‹¤.
+        else, eig_val = max(abs(A*X)); % powermethodë¥¼ ì´ìš© => eigen value = AX í–‰ë ¬ ìš”ì†Œì˜ ìµœëŒ€ê°’
         end
     X = (A*X)/eig_val;
-    eig_vec = X; % eigen vector = AXÇà·ÄÀ» eigen value(scalar) * eigen vector(vector) ²Ã ÀÏ¶§ÀÇ vector 
+    eig_vec = X; % eigen vector = AXí–‰ë ¬ì„ eigen value(scalar) * eigen vector(vector) ê¼´ ì¼ë•Œì˜ vector 
     ea = abs((oldval - eig_val)*100/oldval);
-    if ea <= es, break; end % Çã¿ë¿ÀÂ÷º¸´Ù ÀÛÀ¸¸é for¹®À» Å»Ãâ
-    oldval = eig_val; % ±âÁ¸ eigen value °ªÀ» oldval¿¡ ÀúÀå
+    if ea <= es, break; end % í—ˆìš©ì˜¤ì°¨ë³´ë‹¤ ì‘ìœ¼ë©´ forë¬¸ì„ íƒˆì¶œ
+    oldval = eig_val; % ê¸°ì¡´ eigen value ê°’ì„ oldvalì— ì €ì¥
     end
-    if choice == 2, eig_val = 1 / eig_val; end % choice ==2, Áï smallest °æ¿ì¿¡´Â eig_val¿¡ ¿ª¼ö¸¦ ÃëÇØÁÖ¾î¾ß ÇÑ´Ù.
+    if choice == 2, eig_val = 1 / eig_val; end % choice ==2, ì¦‰ smallest ê²½ìš°ì—ëŠ” eig_valì— ì—­ìˆ˜ë¥¼ ì·¨í•´ì£¼ì–´ì•¼ í•œë‹¤..
 end
