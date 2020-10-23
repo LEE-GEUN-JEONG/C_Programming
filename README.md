@@ -62,6 +62,10 @@ huffman encoding을 이용한 데이터 압축 알고리즘 설계
 
 
 # C++
+
+## 실습명
+![image](https://user-images.githubusercontent.com/58419421/97053385-d6b32900-15bd-11eb-8942-ae667c766595.png)
+
 ### 클래스 구성에 대한 설명
 1) 후에 strcpy_s라는 문자열 복사함수를 사용하므로 헤더함수에 <string.h>를 삽입하였다.
 2) info라는 클래스를 정의하였고 학생들의 정보는 모두 private로 비공개 처리하였다. 
