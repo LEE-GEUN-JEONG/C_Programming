@@ -12,7 +12,7 @@ f(x) = f(a) + f`(a)(x-a) + {f``(a)(x-a)^2}/2 + ,,, + (f^(n)(a)/n!)*(x-a)^n 을 t
 1) 테일러급수는 임의의 점에서의 함숫값을 다른 한 점에서의 함숫값과 도함수들로 예측하는 것임.
 2) [range1,range2] 폐구간 범위에 datanumber만큼의 point를 찍는다.
 3) 테일러 급수를 활용하기 위한 a(기준이 되는 다른 한 점), n(테일러급수 전개를 n차항까지 한다.)
-4) linespace 내장함수를 활용하여 [range1,range2] 범위에 datanumber만큼의 배열을 만들고 rangestore에 저장한다.
+4) linespace 내장함수를 활용하여 [range1,range2] 범위에 datanumber만큼의 배열을 만들고 rangestore에 저장한다..
 5) 테일러급수 전개의 0차항 f(a)를 정의한다.(fx approximation)
 6) 테일러급수 전개에서 f^(n) (<= 도함수 부분)은 fx = e^-x함수이므로 미분을 반복하면 부호만 바뀐다.
 7) rangestore는 배열이므로 fxapp도 배열이 되고, fxapp 배열에 각 point에서의 함수값이 저장된다.
