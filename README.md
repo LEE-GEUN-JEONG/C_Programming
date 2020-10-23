@@ -67,6 +67,7 @@ huffman encoding을 이용한 데이터 압축 알고리즘 설계
 ![image](https://user-images.githubusercontent.com/58419421/97053385-d6b32900-15bd-11eb-8942-ae667c766595.png)
 
 ### 클래스 구성에 대한 설명
+![image](https://user-images.githubusercontent.com/58419421/97053589-36113900-15be-11eb-8b33-d25ae53e43ec.png)
 1) 후에 strcpy_s라는 문자열 복사함수를 사용하므로 헤더함수에 <string.h>를 삽입하였다.
 2) info라는 클래스를 정의하였고 학생들의 정보는 모두 private로 비공개 처리하였다. 
 3) 클래스 멤버로 정수형(학생들의 성적), 문자형(학생의 이름과 등급)을 설정하였다.
@@ -74,18 +75,22 @@ huffman encoding을 이용한 데이터 압축 알고리즘 설계
 5) public에서는 private에 접근하기 위한 멤버 함수들이 정의되어있다.(아래 참고)
 
 ### <클래스 멤버 구성>
+![image](https://user-images.githubusercontent.com/58419421/97053637-47f2dc00-15be-11eb-87ad-0e58be79812a.png)
 1. setinfo1 멤버함수는 문자열(포인터배열)을 인수로 받아들이고 strcpy_s라는 문자열 복사함수를 이용하여 인수를 name이라는 비공개멤버에 대입시킨다.
 2. setinfo2 멤버함수는 정수형 변수 4개를 입력으로 받아들여 각각 비공개 멤버인 중간고사,기말고사,과제,출석점수에 대입시킨다. 그리고 이들의 합으로 totalscore를 정의하고 다중 if문을 활용하여 grade를 정의한다.
 3. show와 show2 멤버함수는 set함수를 통해 할당된 비공개함수값들을 출력한다.
 4. sort함수는 후에 main함수에서 학생들의 성적을 총합순으로 내림차순하기위해 정의되었다. 비공개함수 totalscore값에 접근하기 위하여 sort멤버함수를 정의하였고 totalscore값을 리턴한다.
 
+![image](https://user-images.githubusercontent.com/58419421/97053668-53460780-15be-11eb-942f-f474ce190607.png)
 - main 함수에서 입력으로 받아들일 여러 가지 변수들을 정의하였다. 중요한 점으로 객체의 동적 생성을 위한 size변수의 정의와 후에 있을 totalscore비교를 위한 forsort라는 객체를 1개 정의하였다.
 - new 클래스네임을 통한 size만큼의 크기를 가진 studentinfo라는 객체 배열을 생성하였다.
 
+![image](https://user-images.githubusercontent.com/58419421/97053691-5ccf6f80-15be-11eb-9065-ffaf85f3ccf5.png)
 - 학생들의 이름과 성적을 입력한다. 그 후 setinfo1, setinfo2 멤버함수를 이용하여 입력된 값을 비공개멤버에 접근한다.
 - 입력한 결과가 올바르게 입력되었는지 확인하기 위해 show함수를 통해 입력결과를 출력한다.
 - do-while문을 활용하여 재입력 여부를 묻는다.
 
+![image](https://user-images.githubusercontent.com/58419421/97053727-6d7fe580-15be-11eb-85f1-b3177e15e508.png)
 - 학생들의 성적을 totalscore순으로 내림차순하기 위한 부분이다.
 - 정렬을 실행하는 실습과제에서 많이 했듯이 temp라는 쓰레기값을 만들어 값을 저장하고자 한다.
 - 따라서 클래스에서 이를 활용하기 위하여 forsort라는 객체(쓰레기값객체)를 정의하였다.
@@ -93,6 +98,7 @@ huffman encoding을 이용한 데이터 압축 알고리즘 설계
 - 비교는 for문을 통하여 첫 번째 객체부터 마지막 객체까지 모두 각각 비교가 되도록 하였다. 
 - 쓰레기값 객체 forsort를 통하여 j번째 객체의 총합이 크다면 앞 선 I번 째 객체와 모든 멤버를 교환한다.
 
+![image](https://user-images.githubusercontent.com/58419421/97053741-75d82080-15be-11eb-86ca-57b8d98ecfbc.png)
 - 앞선 과정을 통해 객체들의 정렬 상태가 총합순으로 내림차순 되었다.
 - 따라서 for문과 show2라는 멤버함수를 통하여 모든 객체의 시험결과를 출력한다.(출력시에는 앞선과정을 통하여 내림차순으로 출력된다.)
 - do-while문을 통하여 프로그램 재실행 여부를 묻는다.
