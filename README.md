@@ -110,5 +110,9 @@ huffman encoding을 이용한 데이터 압축 알고리즘 설계
 
 6. 프로그램의 재실행 여부 또는 입력한 것을 재입력하는 재입력 여부를 묻고 이를 실행 할 때에는 do-while문을 활용하여 아주 쉽게 가능하였다. 앞선 많은 과제에서 했듯이 이번 최종과제에서도 do-while문을 이용하여 사용자가 실수를 하여 입력을 잘못하였거나 다른 수강생들의 성적을 평가할 때에 do-while문을 활용하여 재입력 또는 프로그램 재실행을 하였다.
 
+## 실습 결과
+![image](https://user-images.githubusercontent.com/58419421/97053522-0eba6c00-15be-11eb-8421-6c06ae026150.png)
+![image](https://user-images.githubusercontent.com/58419421/97053549-1a0d9780-15be-11eb-8267-a539925fc49d.png)
+
 
 
